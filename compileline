@@ -1,0 +1,4 @@
+;vc -nostdlib -c extheader.c  ;-sc -sd -lvcs 
+vc -nostdlib -o lzma extheader.o lzma.c LzmaDecode.c
+protect lzma -e
+copy lzma libs:xfd/

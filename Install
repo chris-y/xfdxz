@@ -1,0 +1,33 @@
+; xfd xz install v1.0
+(welcome)
+
+(set @default-dest "libs:xfd")
+
+(set #xfd-ver (/ (getversion "libs:xfdmaster.library") 65536))
+
+(if (>= (/ (getversion) 65536) 50)
+	(
+		(if (< #xfd-ver 53)
+			(
+				(abort "You are running OS4, however you need xfdmaster.library v53.1 or higher "
+						"in order to use PPC native slaves.\n\n"
+						"xfdmaster.library v" #xfd-ver)
+			)
+		)
+	)
+	;else
+	(
+		(abort "OS4 required")
+	)
+)
+
+
+(copylib
+	(prompt "Check XZ XFD client is newer than any existing version!")
+	(help @copylib-help)
+	(source "xz")
+	(dest @default-dest)
+;	(confirm "expert")
+)
+
+(exit "You must reboot for the client to take effect")

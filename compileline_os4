@@ -1,0 +1,3 @@
+gcc -N -nostartfiles -o xz -D__USE_INLINE__ extheader.c xz.c
+copy xz libs:xfd/xz
+expunge xfdmaster.library

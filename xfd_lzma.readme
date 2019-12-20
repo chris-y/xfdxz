@@ -1,0 +1,62 @@
+Short:        LZMA slave for xfdmaster.library
+Uploader:     chris@unsatisfactorysoftware.co.uk (Chris Young)
+Author:       Chris Young, Igor Pavlov, Fredrik Wikstrom
+Type:         util/pack
+Version:      1.2a
+URL:          http://www.unsatisfactorysoftware.co.uk/
+Architecture: m68k-amigaos >= 2.0.4; ppc-amigaos >= 4.0.0
+Requires:     util/pack/xfdmaster.lha
+
+This is an LZMA file decruncher slave for XFD.
+
+More information about LZMA can be found at http://www.7-zip.org
+
+A port of LZMA to AmigaOS 4, along with an executable decrunch header
+and XPK sublibrary can be found at http://strohmayer.org/
+
+Note that this slave does not support executables crunched with Joerg's
+header (yet).
+
+Many thanks to Igor Pavlov, firstly for the SDK and secondly for helping
+me get it working!  Thanks also go to salass00 (Fredrik Wikstrom) for
+an assembler header so XFD recognised this slave.
+
+
+HOW TO CHECK IF YOU ARE RUNNING THE OS4 NATIVE VERSION
+======================================================
+
+Run xfdLibInfo >ram:xfd.txt
+Open ram:xfd.txt and search for LZMA.
+
+The line for the PPC version looks like this:
+LZMA | ---- | 53 | ++ | ++ | ++ | ++ | DATA!RECOGLEN!USERTARGET!EXTERN
+              ^^
+The line for the 68K version looks like this:
+LZMA | ---- | 39 | ++ | ++ | ++ | ++ | DATA!RECOGLEN!USERTARGET!M68K!EXTERN
+              ^^                                                ^^^^
+
+The "M68K" part only shows when using xfdLibInfo v53+.
+On 68k xfdmaster installs all slaves will be 68k, so this flag is not present.
+
+
+History
+=======
+
+1.2a
+Added OS4 native version (needs xfdmaster v53)
+
+1.2
+Added usertarget compat and scan and verify funcs
+
+1.1 first release - based on lzma sdk 4.57
+-------
+
+The icons are by Ken "Ken's Icons" Lester.
+
+As usual, I can and will not accept responsibility for any damage,
+loss of data etc incurred through use of this software.  This archive
+is provided "as-is" without warranty of any kind and all use is at
+your own risk.
+
+Please check the PGP signature in the Aminet readme against the
+archive to ensure it has not been tampered with.
